@@ -13,5 +13,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: "Migrate script"
+      - name: "weird import thing"
         run: python3.10 src/aa/bb.py
