@@ -1,0 +1,6 @@
+__pycache__
+.venv
+.vscode
+.postgres-docker-data
+.idea
+.grafana_data
