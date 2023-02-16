@@ -13,6 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: github tags play
+        run: |
+          git describe --dirty=-unsupported --always --tags --long
+          G=$(git describe --dirty=-unsupported --always --tags --long)
+          echo G ${G}
+
+          git describe --always --tags --long
+          H=$(git describe --always --tags --long)
+          echo H ${H}
+
       - run: ls
 
       - name: "weird import thing"
