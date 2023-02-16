@@ -25,7 +25,10 @@ jobs:
           H=$(git describe --always --tags --long)
           echo H ${H}
 
-      - run: ls
+          echo A ${{ github.ref }}
+          echo ${{ github.sha }}
+
+      - run: echo ${{ github }}
 
       - name: "weird import thing"
         run: python3.10 src/aa/bb.py
