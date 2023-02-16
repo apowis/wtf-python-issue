@@ -12,6 +12,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: "Migrate script"
+      - name: github tags play
+        run: |
+          git describe --dirty=-unsupported --always --tags --long
+          G=$(git describe --dirty=-unsupported --always --tags --long)
+          echo G ${G}
+
+          git describe --always --tags --long
+          H=$(git describe --always --tags --long)
+          echo H ${H}
+
+      - run: ls
+
+      - name: "weird import thing"
         run: python3.10 src/aa/bb.py
