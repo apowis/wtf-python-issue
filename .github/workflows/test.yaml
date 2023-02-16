@@ -19,7 +19,7 @@ jobs:
           echo A ${{ github.ref }}
           echo ${{ github.sha }}
 
-      - run: jq --raw-output ${GITHUB_EVENT_PATH}
+      - run: jq --raw-output . "$GITHUB_EVENT_PATH"
 
       - name: "weird import thing"
         run: python3.10 src/aa/bb.py
